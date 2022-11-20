@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Fruktur&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Fruktur', cursive;
+}
+
+section {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background-color: #0b061f;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.spider {
+    position: absolute;
+    top: 0;
+    animation: animateSpyder 15s ease-in-out infinite;
+}
+
+@keyframes animateSpyder {
+
+    0%,
+    100% {
+        transform: translateY(-500px);
+    }
+
+    50% {
+        transform: translateY(0px);
+    }
+}
+
+.pumpkin-1 {
+    position: absolute;
+    top: 100px;
+    right: 200px;
+    animation: animatePumpkin 8s ease infinite;
+}
+
+.pumpkin-2 {
+    position: absolute;
+    scale: 0.5;
+    bottom: 20px;
+    left: 50px;
+    animation: animatePumpkin 4s ease infinite;
+}
+
+@keyframes animatePumpkin {
+
+    0%,
+    100% {
+        transform: translateY(-50px);
+    }
+
+    50% {
+        transform: translateY(50px);
+
+    }
+}
+
+.spiderWeb {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    mix-blend-mode: screen;
+}
+
+.text {
+    position: relative;
+    color: rgba(255, 255, 255, 0.1);
+    font-size: 12vh;
+    font-weight: 100;
+    text-shadow: none;
+    animation: animateText 5s linear infinite;
+}
+
+@keyframes animateText {
+
+    0%,
+    18%,
+    20%,
+    50.1%,
+    60%,
+    65.1%,
+    80%,
+    90.10%,
+    92% {
+        color: rgba(255, 255, 255, 0.1);
+        text-shadow: none;
+
+    }
+
+    18.1%,
+    20.1%,
+    30%,
+    50%,
+    60%,
+    65%,
+    80.1%,
+    90%,
+    92.1%,
+    100% {
+        color: #ffac09;
+        text-shadow: 0 0 10px #ffac09,
+            0 0 20px #ffac09,
+            0 0 40px #ffac09,
+            0 0 80px #ffac09,
+            0 0 100px #ffac09;
+
+    }
+}
+
+@media (max-width: 768px) {
+    section {
+        display: block;
+    }
+
+    .spider {
+        top: 0;
+        left: 40%;
+        animation: animatePumpkin 4s ease infinite;
+    }
+
+    @keyframes animatePumpkin {
+
+        0%,
+        50%,
+        100% {
+            transform: translateY(-340px);
+        }
+    }
+
+    .text {
+        margin-top: calc(50%);
+        text-align: center;
+    }
+
+    .pumpkin-1{
+        display: none;
+    }
+
+    .pumpkin-2{
+        bottom: -30%;
+        left: 18%;
+    }
+
+    .spiderWeb {
+        position: absolute;
+        top: 0px;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        mix-blend-mode: screen;
+    }
+}
